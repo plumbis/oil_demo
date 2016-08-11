@@ -19,3 +19,8 @@
 - name: Install Yahoo Finance python library
   pip:
     name: yahoo-finance
+
+- name: Copy stock price script
+  copy:
+    src: stock_price.py
+    dest: /home/vagrant/stock_price.py
