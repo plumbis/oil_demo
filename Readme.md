@@ -21,3 +21,6 @@ First define the `TARGET_PRICE` value.
 Next define `current_price` by whatever price lookup method you wish.
 
 This assume eBGP is in use with unnumbered. When a change needs to be made a BGP AS path is appened or remoted based on the price change.
+
+Leaf1 will adjust the ECMP path between spines to reach Leaf2. Executing the script with `python stock_price.py` in /home/vagrant will exectue the change.
+
