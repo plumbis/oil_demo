@@ -10,3 +10,12 @@
     src: Quagga.conf.j2
     dest: /etc/quagga/Quagga.conf
   notify: reload quagga
+
+- name: Install Python pip
+  apt:
+    name: python-pip
+    state: present
+
+- name: Install Yahoo Finance python library
+  pip:
+    name: yahoo-finance
