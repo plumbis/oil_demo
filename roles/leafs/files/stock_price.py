@@ -8,8 +8,7 @@
 from yahoo_finance import Share
 import json
 import subprocess
-import sys
-import getopt
+
 
 def get_asn():
     command = "show ip bgp summary json"
@@ -53,23 +52,29 @@ if __name__ == "__main__":
     high_date = "2016-07-19"
     route_map_name = "prepend"
 
-    ge = Share("GE")
+    stock = Share("GE")
     asn = get_asn()
 
     TARGET_PRICE = 25.00
 
     # 32.93
-    high_price = ge.get_historical(high_date, high_date)[0]["Close"]
+    high_price = stock.get_historical(high_date, high_date)[0]["Close"]
 
     # 24.30
-    low_price = ge.get_historical(low_date, low_date)[0]["Close"]
+    low_price = stock.get_historical(low_date, low_date)[0]["Close"]
 
-    current_price = low_price
+    # print "Current price: " + str(stock.get_price())
+    current_price = high_price
+
+    print "Reference stock price is: " + str(current_price)
+    print "Target price is: " + str(TARGET_PRICE)
 
     if float(current_price) > float(TARGET_PRICE):
+        print "Modifying routing to single path"
         use_spine1()
 
     if float(current_price) < float(TARGET_PRICE):
+        print "Modifying routing to both paths"
         use_both_spines()
 
     exit(0)
