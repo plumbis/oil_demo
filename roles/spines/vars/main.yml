@@ -8,9 +8,11 @@ interfaces:
 
     swp1:
       alias: "To leaf 1"
+      ipv4: "10.1.1.2/30"
 
     swp2:
       alias: "To leaf 2"
+      ipv4: "10.2.1.2/30"
 
     swp3:
       alias: "To leaf 3"
@@ -31,9 +33,11 @@ interfaces:
 
     swp1:
       alias: "To leaf 1"
+      ipv4: "10.1.2.2/30"
 
     swp2:
       alias: "To leaf 2"
+      ipv4: "10.2.2.2/30"
 
     swp3:
       alias: "To leaf 3"

@@ -8,9 +8,11 @@ interfaces:
 
     swp1:
       alias: "To spine 1"
+      ipv4: "10.1.1.1/30"
 
     swp2:
       alias: "To spine 2"
+      ipv4: "10.1.2.1/30"
 
     swp3:
       alias: "To server 1"
@@ -22,9 +24,11 @@ interfaces:
 
     swp1:
       alias: "To spine 1"
+      ipv4: "10.2.1.1/30"
 
     swp2:
       alias: "To spine 2"
+      ipv4: "10.2.2.1/30"
 
     swp3:
       alias: "To server 1"
